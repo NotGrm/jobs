@@ -15,4 +15,11 @@ class Mission < ApplicationRecord
       listing: booking.listing
     )
   end
+
+  def self.create_last_checkout_for(booking)
+    Mission.last_checkout.create(
+      date: booking.end_date,
+      listing: booking.listing
+    )
+  end
 end
