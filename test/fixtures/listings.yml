@@ -1,0 +1,7 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+small_condo:
+  number_of_rooms: 1
+
+big_condo:
+  number_of_rooms: 2
