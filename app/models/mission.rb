@@ -22,4 +22,11 @@ class Mission < ApplicationRecord
       listing: booking.listing
     )
   end
+
+  def self.create_checkout_checkin_for(reservation)
+    Mission.checkout_checkin.create(
+      date: reservation.end_date,
+      listing: reservation.listing
+    )
+  end
 end
