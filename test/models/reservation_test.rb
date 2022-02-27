@@ -10,8 +10,8 @@ class ReservationTest < ActiveSupport::TestCase
   test "create a checkout checkin mission when created" do
     assert_difference '@listing.missions.checkout_checkin.count' do
       @listing.reservations.create(
-        start_date: '2022-03-01',
-        end_date: '2022-03-02'
+        start_date: '2022-03-03',
+        end_date: '2022-03-04'
       )
     end
   end

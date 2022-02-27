@@ -2,7 +2,7 @@ require "test_helper"
 
 class CreateLastCheckoutMissionJobTest < ActiveJob::TestCase
   setup do
-    @booking = bookings(:one)
+    @booking = bookings(:two)
   end
 
   test "create a mission" do
