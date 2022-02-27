@@ -3,3 +3,15 @@ checkout_checkin:
   listing: small_condo
   mission_type: checkout_checkin
   price: 5
+
+first_checkin:
+  date: 2022-02-24
+  listing: small_condo
+  mission_type: first_checkin
+  price: 10
+
+last_checkout:
+  date: 2022-03-02
+  listing: small_condo
+  mission_type: last_checkout
+  price: 10

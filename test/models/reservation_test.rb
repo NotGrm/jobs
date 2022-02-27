@@ -27,7 +27,7 @@ class ReservationTest < ActiveSupport::TestCase
     end
   end
 
-  test "prevent destroy if reservation start date is reach" do
+  test "prevent destroy if reservation start date is reached" do
     reservation = reservations(:one)
 
     travel_to reservation.start_date

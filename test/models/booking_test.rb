@@ -22,4 +22,44 @@ class BookingTest < ActiveSupport::TestCase
       )
     end
   end
+
+  test "prevent destroy if booking start date is reached" do
+    booking = bookings(:one)
+
+    travel_to booking.start_date
+
+    assert_no_difference 'Booking.count' do
+      booking.destroy
+    end
+  end
+
+  test "remove first checkin when destroyed" do
+    booking = bookings(:one)
+
+    travel_to 1.day.before(booking.start_date)
+
+    assert_difference '@listing.missions.first_checkin.count', -1 do
+      booking.destroy
+    end
+  end
+
+  test "remove last checkout when destroyed" do
+    booking = bookings(:one)
+
+    travel_to 1.day.before(booking.start_date)
+
+    assert_difference '@listing.missions.last_checkout.count', -1 do
+      booking.destroy
+    end
+  end
+
+  test "remove reservation happening during the booking period" do
+    booking = bookings(:one)
+
+    travel_to 1.day.before(booking.start_date)
+
+    assert_difference '@listing.reservations.count', -2 do
+      booking.destroy
+    end
+  end
 end
