@@ -4,3 +4,8 @@ one:
   start_date: 2022-02-27
   end_date: 2022-02-28
   listing: small_condo
+
+two:
+  start_date: 2022-03-01
+  end_date: 2022-03-02
+  listing: small_condo
